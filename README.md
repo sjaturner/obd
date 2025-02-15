@@ -233,7 +233,7 @@ So:
 
 (2) Combined axes
 
-(3) .. (5) Downshifts
+(3) .. (5) Downshifts, note the throttle position spike which is the throttle blip
 (6) .. (8) Upshifts
 
 # Observations
