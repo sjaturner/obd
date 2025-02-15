@@ -230,7 +230,22 @@ So:
 
 ![Readings](./readings.png)
 
+(1) Seconds
+
+(2) Combined axes
+
+(3) .. (5) Downshifts
+(6) .. (8) Upshifts
+
 # Observations
+
+Looks as if downshifts (3), (4) match the revs reasonably closely but
+there's a slight dwell before I drop the clutch. Should be off the
+clutch quicker?
+
+In (5) I think that you can see the roadspeed dropping at a faster rate
+after the shift, possibly increased engine breaking but I may have been
+on the brakes too ...
 
 # Further Work
 
