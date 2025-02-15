@@ -44,7 +44,7 @@ engine speed to the rest of the drive train as you shift gears. This
 is often referred to as rev matching.
 
 If you pay attention you'll notice that, at least on up shifts,
-drivers naturally allow this to happen. They drop the clutch, wait
+drivers naturally allow this to happen. They depress the clutch, wait
 for the engine revs to decrease and then take their foot off the clutch at
 the point where the revs more or less match the road speed in the next,
 higher gear. Failing to do that is pretty conspicuous, the car jolts as
@@ -56,13 +56,13 @@ say that most people won't bother with that. If you change down at low
 engine speeds and and very gently raise the clutch after selecting the
 lower gear there's little to chose between the two methods. I suspect
 that if you make a poor job of the rev-matching then the result is
-worse for the car, anyway. I'm expect that there are many YouTube videos
-demonstrating these contrasting approaches.
+worse for the car, anyway.
+
+To summarise, this refinement is pretty pointless in modern cars.
 
 ## Motivation
 
-I was interested to see how this works in practice and I like data and 
-graphs.
+I'm interested, and I like graphs.
 
 # Safety
 
@@ -91,13 +91,12 @@ is cloned version of a product from "ELM Electronics".  The main device
 is a PIC and by some misfortune a product was released without locked
 firmware. Since then, cheap clones dominate.
 
-Connect this to your car OBD port and it talks over a serial interface 
-to your computer. Some support Bluetooth connections but as a Linux 
-user that just sounds like one more problem.
-
 https://cdn.sparkfun.com/assets/learn_tutorials/8/3/ELM327DS.pdf
 
 That contains all the gory details.
+
+Some ELM327 devices support Bluetooth connections but as a Linux user
+that just sounds like one more problem.
 
 I selected a USB connected variant - when I plug that into my computer 
 it looks like a serial port. Internally there's a CH341 serial controller 
