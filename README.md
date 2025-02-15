@@ -103,6 +103,8 @@ it looks like a serial port. Internally there's a CH341 serial controller
 which seems quite like the more common FTDI device. Either way, nobody 
 cares: it's a serial device.
 
+![ELM327 USB Variant](./elm327.png)
+
 For reasons which are lost in the mists of time, the ELM327 use AT commands, 
 like an old fashioned serial modem. I see to recall the AT characters allowed 
 auto baud detection but this really doesn't seem to happen here.
