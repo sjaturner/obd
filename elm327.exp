@@ -1,0 +1,20 @@
+#!/usr/bin/expect
+
+set modem /dev/ttyUSB0
+
+stty -F $modem 38400 cs8 -parenb -cstopb
+
+spawn -open [open $modem w+]
+send "\r"
+expect ">"
+send "AT Z\r"
+expect ">"
+send "AT Z\r"
+expect ">"
+send "AT SP6\r"
+expect ">"
+sleep 0.1
+while { 1 } {
+    send "010C0D11\r"
+    expect ">"
+}
