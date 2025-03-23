@@ -1,18 +1,30 @@
-load out
+out=load(argv(){1});
 out(:,1)-=out(1,1);
+
+function plotter(out)
+    clf;hold on;plot(out(:,1),out(:,2),'.b-');plot(out(:,1),out(:,3)/1.609344*100,'.r-');plot(out(:,1),out(:,4)/256*6000,'.g-')
+end
+
 retimed=(min(out(:,1)):0.05:max(out(:,1)))';
 
 for index = 2:size(out)(2)
     retimed=[retimed, interp1(out(:,1)', out(:,index)',retimed(:,1)', 'previous')'];
 end
 
+
 time=retimed(:,1);
 rpm=retimed(:,2);
 speed=retimed(:,3)/1.609344;
 throttle=retimed(:,4);
 gears=speed./rpm;
-plot(retimed(:,1),gears)
+%plot(retimed(:,1),gears)
 %pause
+
+plotter(retimed)
+hold on
+plot(retimed(:,1),gears * 20000)
+pause
+clf
 
 changes=gears-shift(gears,35);
 plot(retimed(:,1),changes);
@@ -62,13 +74,11 @@ locs/=10000
 gear_classifier_slop = 0.05
 gear_classifier=[locs * (1 - gear_classifier_slop), locs * (1 + gear_classifier_slop)]
 
-function plotter(out)
-    clf;hold on;plot(out(:,1),out(:,2),'.b-');plot(out(:,1),out(:,3)/1.609344*100,'.r-');plot(out(:,1),out(:,4)/256*6000,'.g-')
-end
+shifts=upshiftsat;
 
-downshiftsat=downshiftsat(:,1)-20;
-for index = 1:size(downshiftsat)
-    from = downshiftsat(index);
+shifts=shifts(:,1)-20;
+for index = 1:size(shifts)
+    from = shifts(index);
     to = from+50
     sub=retimed(from:to,:);
     when=sub(1,1);
