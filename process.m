@@ -45,11 +45,11 @@ end
 
 upshifts=changes > 0.0025;
 upshiftsat=oneruns(upshifts);
-upshiftsat=upshiftsat(upshiftsat(:,2)-upshiftsat(:,1)>25,:)
+upshiftsat=upshiftsat(upshiftsat(:,2)-upshiftsat(:,1)>25,:);
 
 downshifts=changes < -0.0025;
 downshiftsat=oneruns(downshifts);
-downshiftsat=downshiftsat(downshiftsat(:,2)-downshiftsat(:,1)>25,:)
+downshiftsat=downshiftsat(downshiftsat(:,2)-downshiftsat(:,1)>25,:);
 
 hold on
 plot([retimed(upshiftsat(:,1)),retimed(upshiftsat(:,2))],0.002.*[0 1],'r')
@@ -75,6 +75,7 @@ gear_classifier_slop = 0.05
 gear_classifier=[locs * (1 - gear_classifier_slop), locs * (1 + gear_classifier_slop)]
 
 shiftsat=downshiftsat;
+%shiftsat=upshiftsat;
 
 shiftsat=shiftsat(:,1)-20;
 for index = 1:size(shiftsat)
