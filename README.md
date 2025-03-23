@@ -231,12 +231,10 @@ So:
 
 ![Readings](./readings.png)
 
-(1) Seconds
-
-(2) Combined axes
-
-(3) .. (5) Downshifts, note the throttle position spike which is the throttle blip
-(6) .. (8) Upshifts
+    (1) Seconds
+    (2) Combined axes
+    (3) .. (5) Downshifts, note the throttle position spike which is the throttle blip
+    (6) .. (8) Upshifts
 
 # Observations
 
@@ -280,12 +278,12 @@ Here's a typical downshift, extracted by the script.
 
 ![Downshift](./downshift_1.png)
 
-(1) Is the RPM
-(2) Is the roadspeed * 1000
-(3) Is the throttle position
-(4) Time axis, in seconds
-(5) Throttle blip on downshift
-(6) I suspect that's where the clutch was fully disengaged.
+    (1) Is the RPM
+    (2) Is the roadspeed * 1000
+    (3) Is the throttle position
+    (4) Time axis, in seconds
+    (5) Throttle blip on downshift
+    (6) I suspect that's where the clutch was fully disengaged.
 
 In this case, the rev match was pretty good but I think that I could
 have been off the clutch much quicker without any jarring. I can see
@@ -297,9 +295,9 @@ Looking at an upshift, again extracted by the script.
 
 ![Upshift](./upshift_1.png)
 
-(1) Is the RPM
-(2) Is the roadspeed * 1000
-(3) Is the throttle position
+    (1) Is the RPM
+    (2) Is the roadspeed * 1000
+    (3) Is the throttle position
 
 Backing off the throttle to drop the revs at (3), interesting to observe
 how slowly the engine speed decreases - perhaps some unpleasant rev-hang
