@@ -74,11 +74,11 @@ locs/=10000
 gear_classifier_slop = 0.05
 gear_classifier=[locs * (1 - gear_classifier_slop), locs * (1 + gear_classifier_slop)]
 
-shifts=upshiftsat;
+shiftsat=downshiftsat;
 
-shifts=shifts(:,1)-20;
-for index = 1:size(shifts)
-    from = shifts(index);
+shiftsat=shiftsat(:,1)-20;
+for index = 1:size(shiftsat)
+    from = shiftsat(index);
     to = from+50
     sub=retimed(from:to,:);
     when=sub(1,1);
