@@ -260,3 +260,57 @@ everything.
 Perhaps I can add some AI to make snarky remarks when I mess up.
 
 _Oh, nice gear change, Stirling_
+
+# Addendum
+
+I captured some data from a longer trip and there's an Octave script which 
+attempts to recognise gear shifts (process.m) and plots them in order. I was 
+more interested in downshifts but the algorithm seems to work either way.
+
+This is the route, seconds along the x axis.
+
+![Route](./route.png)
+
+The lower trace is a gear indication based on the ratio of speed
+to RPM. The other traces are coloured as the earlier plot (above).
+Note that there's an urban section close to the start where the speed,
+and of course throttle position are consistently low.
+
+Here's a typical downshift, extracted by the script.
+
+![Downshift](./downshift_1.png)
+
+(1) Is the RPM
+(2) Is the roadspeed * 1000
+(3) Is the throttle position
+(4) Time axis, in seconds
+(5) Throttle blip on downshift
+(6) I suspect that's where the clutch was fully disengaged.
+
+In this case, the rev match was pretty good but I think that I could
+have been off the clutch much quicker without any jarring. I can see
+the revs drop a little and assume that's the root cause. I'd estimate
+that the total duration is a second which seems realistic. Could be 
+faster.
+
+Looking at an upshift, again extracted by the script.
+
+![Upshift](./upshift_1.png)
+
+(1) Is the RPM
+(2) Is the roadspeed * 1000
+(3) Is the throttle position
+
+Backing off the throttle to drop the revs at (3), interesting to observe
+how slowly the engine speed decreases - perhaps some unpleasant rev-hang
+added by the engine management unit plus some actual flywheel effect.
+
+I suppose one could just dump that excess energy into the clutch but that 
+would be horrible.
+
+I'd like to see similar graphs for a car with a lighter drivetrain,
+cables, throttle bodies and no EMU - but then there wouldn't be a
+convenient OBD port.
+
+A final observation is that I could really use a higher sampling rate 
+but that is an OBD constraint.
